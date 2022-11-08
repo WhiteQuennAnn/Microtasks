@@ -1,11 +1,19 @@
 import React from 'react';
 
-type NewComponentType = {
-    students: any
+type StudentType = {
+    id: number
+    name: string
+    age: number
 }
 
 
-export const NewComponent = (props:NewComponentType) => {
+type NewComponentType = {
+    students: Array<StudentType>
+}
+
+
+export const NewComponent = (props: NewComponentType) => {
+    debugger
     return (
         <div> {props.students}</div>
     )
