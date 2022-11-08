@@ -19,7 +19,7 @@ export const CarComponent = () => {
                     <div> {index + 1}
                         <li>
 
-                        <span key={index + 1}>
+                        <span>
                            {objectFromCarArray.manufacturer}
                         </span>
                             <span> age: {objectFromCarArray.model} </span>
