@@ -4,7 +4,7 @@ import './App.css';
 import {Header} from "./site/Header";
 import { Body } from './site/Body';
 import {Footer} from "./site/Footer";
-import {NewComponent} from "./NewComponent";
+import {CarComponent} from "./NewComponent";
 
 const students = [
     {id: 1, name: "James", age: 8},
@@ -25,7 +25,7 @@ function App() {
             <Header title={"New Body"}/>
             <Body titleForBody={"New Body"}/>
             <Footer titleForFooter={"New Body"}/>
-            <NewComponent/>
+          <CarComponent />
 
         </>
     );

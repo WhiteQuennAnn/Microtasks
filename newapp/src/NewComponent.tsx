@@ -1,14 +1,9 @@
 import React from 'react';
 
-type StudentType = {
+type carType = {
     manufacturer: string
     model: string
 }
-
-
-// type NewComponentType = {
-//     students: Array<StudentType>
-
 
 const topCars = [
     {manufacturer: 'BMW', model: 'm5cs'},
@@ -30,10 +25,10 @@ const topCars = [
 // </tr>
 // </table>
 
-export const NewComponent = () => {
+export const CarComponent = () => {
     return (
         <ul>
-            {topCars.map((objectFromStudentArray: StudentType, index) => {
+            {topCars.map((objectFromCarArray: carType, index) => {
                 return (
                     // <li key={objectFromStudentArray.id}>
                     //     <span>
@@ -41,11 +36,11 @@ export const NewComponent = () => {
                     //     </span>
                     //     <span> age: {objectFromStudentArray.age} </span>
                     // </li>
-                    <li key={index+1}>
+                    <li key={index + 1}>
                         <span>
-                           {objectFromStudentArray.manufacturer}
+                           {objectFromCarArray.manufacturer}
                         </span>
-                        <span> age: {objectFromStudentArray.model} </span>
+                        <span> age: {objectFromCarArray.model} </span>
                     </li>
                 )
 
