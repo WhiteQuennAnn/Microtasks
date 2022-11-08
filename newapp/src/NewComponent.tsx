@@ -13,8 +13,11 @@ type NewComponentType = {
 
 
 export const NewComponent = (props: NewComponentType) => {
-    debugger
-    return (
-        <div> {props.students}</div>
+      return (
+          <ul>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+          </ul>
     )
 }
