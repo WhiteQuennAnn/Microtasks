@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dz = () => {
+export const Dz = () => {
     return (
         <>
             <ul>
