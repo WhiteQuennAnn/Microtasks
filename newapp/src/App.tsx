@@ -1,15 +1,14 @@
-import React, {MouseEvent} from 'react';
-
+import React from 'react';
+import {Button} from "./site/Components/Button";
 import './App.css';
 
 function App() {
 
     return (
         <div className={"App"}>
-            <button> MyYouTubeChannel-1
-            </button>
-            <button> MyYouTubeChannel-2 </button>
 
+            <Button name={"MyYouTubeChannel-1"}/>
+            <Button name={"MyYouTubeChannel-2"}/>
 
         </div>
     );
