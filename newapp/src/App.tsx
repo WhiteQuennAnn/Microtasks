@@ -11,6 +11,11 @@ function App() {
        setA(++a)
         console.log(a)
     }
+    const onclickHandler1=() => {
+        setA(0)
+        console.log(a)
+    }
+
     // const Button1Foo =(suscriber: string, age:number)=> {
     //     console.log(suscriber,age)
     //
@@ -27,6 +32,7 @@ function App() {
         <div className={"App"}>
 <h1> {a}</h1>
             <button onClick={onclickHandler}> number</button>
+            <button onClick={onclickHandler1}> 0 </button>
 
             {/*<Button name={"MyYouTubeChannel-1"} callBack={()=>Button1Foo("i am Anna", 23)}/>*/}
             {/*<Button name={"MyYouTubeChannel-2"} callBack={()=>Button2Foo("I am Den", 34)}/>*/}
