@@ -3,10 +3,10 @@ import React, {MouseEvent} from 'react';
 import './App.css';
 
 function App() {
-    const myFirstSubscriber =() => {
+    const myFirstSubscriber =(event: MouseEvent<HTMLButtonElement) => {
         console.log("Hello, i am Tanya")
     }
- const mySecondSubscriber =() => {
+ const mySecondSubscriber =(event: MouseEvent<HTMLButtonElement) => {
         console.log("Hello, i am POl")
     }
 
