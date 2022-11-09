@@ -17,6 +17,11 @@ function App() {
 
     let currentMoney = money.filter((filteredMoney) => filteredMoney.banknots === 'RUBLS')
 
+    const onclickFilterHandler =() => {
+
+    }
+
+
     return (
 <>
         <ul>
@@ -31,9 +36,9 @@ function App() {
             })}
         </ul>
     <div style={{marginLeft: "35px"}}>
-        <button> all</button>
-        <button> ruble</button>
-        <button> dollar</button>
+        <button onClick={onclickFilterHandler}> all </button>
+        <button onClick={onclickFilterHandler}> ruble </button>
+        <button onClick={onclickFilterHandler}> dollar </button>
     </div>
 </>
     );
