@@ -10,6 +10,9 @@ function App() {
     const Button2Foo =(suscriber: string,  age:number)=> {
         console.log(suscriber, age)
     }
+    const Button3Foo =()=> {
+        console.log("I am stupid button")
+    }
 
     return (
 
@@ -17,6 +20,7 @@ function App() {
 
             <Button name={"MyYouTubeChannel-1"} callBack={()=>Button1Foo("i am Anna", 23)}/>
             <Button name={"MyYouTubeChannel-2"} callBack={()=>Button2Foo("I am Den", 34)}/>
+            <Button name={"MyYouTubeChannel-3"} callBack={Button3Foo}/>
 
 
         </div>
