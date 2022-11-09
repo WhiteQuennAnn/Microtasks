@@ -16,11 +16,16 @@ function App() {
     ])
 
     let currentMoney = money;
+if (nameButton==='RUBLS') {
+    currentMoney = money.filter((filteredMoney) => filteredMoney.banknots === 'RUBLS');
+}
+if  (nameButton==='RUBLS') {
+    currentMoney = money.filter((filteredMoney) => filteredMoney.banknots === 'Dollars') ;
+}
 
-    currentMoney = money.filter((filteredMoney) => filteredMoney.banknots === 'RUBLS')
 
 
-    currentMoney = money.filter((filteredMoney) => filteredMoney.banknots === 'RUBLS')
+
     const onclickFilterHandler =(nameButton: string) => {
         console.log(nameButton)
     }
