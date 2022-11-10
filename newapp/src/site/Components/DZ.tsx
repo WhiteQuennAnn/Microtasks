@@ -4,19 +4,19 @@ import {FilterType} from "../../App";
 type dzType = {
     banknots: string
     value: number
-    number:string
+    number: string
 
 }
 type MoneyType = {
-    money :Array<dzType>
-    onclickFilterHandler:(nameButton: FilterType) => void
+    currentMoney: Array<dzType>
+    onclickFilterHandler: (nameButton: FilterType) => void
 }
 
-export const Dz = (props:MoneyType ) => {
+export const Dz = (props: MoneyType) => {
     return (
         <>
             <ul>
-                {props.money.map((objFromMoneyArr, index) => {
+                {props.currentMoney.map((objFromMoneyArr, index) => {
                     return (
                         <li key={index}>
                             <span> {objFromMoneyArr.banknots}</span>

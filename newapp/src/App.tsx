@@ -33,7 +33,7 @@ function App() {
         setFilter(nameButton);
     }
     return (
-        <Dz money={money} onclickFilterHandler={onclickFilterHandler}/>
+        <Dz  currentMoney={ currentMoney} onclickFilterHandler={onclickFilterHandler}/>
 
         // <>
         //     <ul>
