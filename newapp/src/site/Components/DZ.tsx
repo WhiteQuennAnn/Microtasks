@@ -1,17 +1,22 @@
 import React from 'react';
+import {FilterType} from "../../App";
 
 type dzType = {
     banknots: string
     value: number
-    number: number
+    number:string
+
+}
+type MoneyType = {
+    money :Array<dzType>
+    onclickFilterHandler:(nameButton: FilterType) => void
 }
 
-
-export const Dz = (props:dzType ) => {
+export const Dz = (props:MoneyType ) => {
     return (
         <>
             <ul>
-                {currentMoney.map((objFromMoneyArr, index) => {
+                {props.money.map((objFromMoneyArr, index) => {
                     return (
                         <li key={index}>
                             <span> {objFromMoneyArr.banknots}</span>
@@ -22,9 +27,9 @@ export const Dz = (props:dzType ) => {
                 })}
             </ul>
             <div style={{marginLeft: "35px"}}>
-                <button onClick={() => onclickFilterHandler("all")}> all</button>
-                <button onClick={() => onclickFilterHandler("RUBLS")}> ruble</button>
-                <button onClick={() => onclickFilterHandler("Dollars")}> dollar</button>
+                <button onClick={() => props.onclickFilterHandler("all")}> all</button>
+                <button onClick={() => props.onclickFilterHandler("RUBLS")}> ruble</button>
+                <button onClick={() => props.onclickFilterHandler("Dollars")}> dollar</button>
             </div>
         </>
     );

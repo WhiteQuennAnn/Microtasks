@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {Button} from "./site/Components/Button";
 import './App.css';
-import {Dz} from "./DZ";
+import Dz from "./site/Components/DZ";
 
-type FilterType = "all" | "RUBLS" | "Dollars"
+
+export type FilterType = "all" | "RUBLS" | "Dollars"
 
 function App() {
 
@@ -32,7 +33,8 @@ function App() {
         setFilter(nameButton);
     }
     return (
-        <Dz/>
+        <Dz money={money} onclickFilterHandler={onclickFilterHandler}/>
+
         // <>
         //     <ul>
         //         {currentMoney.map((objFromMoneyArr, index) => {
