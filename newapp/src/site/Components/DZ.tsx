@@ -1,6 +1,13 @@
 import React from 'react';
 
-export const Dz = () => {
+type dzType = {
+    banknots: string
+    value: number
+    number: number
+}
+
+
+export const Dz = (props:dzType ) => {
     return (
         <>
             <ul>

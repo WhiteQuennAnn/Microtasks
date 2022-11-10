@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button} from "./site/Components/Button";
 import './App.css';
-import {DZ} from "./DZ";
+import {Dz} from "./DZ";
 
 type FilterType = "all" | "RUBLS" | "Dollars"
 
@@ -17,7 +17,7 @@ function App() {
         {banknots: 'Dollars', value: 50, number: ' x1234567890'},
         {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
     ])
-    const[Filter, setFilter] = useState<FilterType>("all")
+    const [Filter, setFilter] = useState<FilterType>("all")
 
     let currentMoney = money;
     if (Filter === 'RUBLS') {
@@ -28,11 +28,11 @@ function App() {
     }
 
 
-const onclickFilterHandler = (nameButton: FilterType) => {
-    setFilter(nameButton);
-}
+    const onclickFilterHandler = (nameButton: FilterType) => {
+        setFilter(nameButton);
+    }
     return (
-        <DZ/>
+        <Dz/>
         // <>
         //     <ul>
         //         {currentMoney.map((objFromMoneyArr, index) => {
@@ -54,4 +54,5 @@ const onclickFilterHandler = (nameButton: FilterType) => {
     )
 
 }
+
 export default App;
