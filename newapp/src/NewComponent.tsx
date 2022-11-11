@@ -13,21 +13,21 @@ const topCars = [
 
 export const CarComponent = () => {
     return (
-        // <ul>
-        //     {topCars.map((objectFromCarArray: carType, index) => {
-        //         return (
-        //             <div> {index + 1}
-        //                 <li>
-        //
-        //                 <span>
-        //                    {objectFromCarArray.manufacturer}
-        //                 </span>
-        //                     <span> age: {objectFromCarArray.model} </span>
-        //                 </li>
-        //             </div>
-        //         )
-        //
-        //     })}
-        // </ul>
+        <ul>
+            {topCars.map((objectFromCarArray: carType, index) => {
+                return (
+                    <div> {index + 1}
+                        <li>
+
+                        <span>
+                           {objectFromCarArray.manufacturer}
+                        </span>
+                            <span> age: {objectFromCarArray.model} </span>
+                        </li>
+                    </div>
+                )
+
+            })}
+        </ul>
     )
 }
