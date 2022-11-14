@@ -12,9 +12,12 @@ function App () {
             {message: 'message5'}
         ]
     )
+    const addMessage =() => {
+        console.log("afgvsfgbdghbd")
+    }
     return (
         <div className="App">
-            <FullInput/>
+            <FullInput addMessage={addMessage}/>
             {/*<div>*/}
             {/*    <input/>*/}
             {/*    <button>+</button>*/}
