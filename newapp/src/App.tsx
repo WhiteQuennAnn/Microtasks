@@ -1,3 +1,7 @@
+import React, {useState} from 'react';
+import './App.css';
+
+
 function App() {
     const [message, setMessage] = useState([
             {message: 'message1'},
@@ -10,7 +14,7 @@ function App() {
     return (
         <div className="App">
             <div>
-                <input />
+                <input/>
                 <button>+</button>
             </div>
             {message.map((el, index) => {
