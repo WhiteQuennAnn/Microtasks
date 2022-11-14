@@ -3,7 +3,7 @@ import './App.css';
 
 
 function App () {
-    const [message, setMessage] = useState([
+    let [message, setMessage] = useState([
             {message: 'message1'},
             {message: 'message2'},
             {message: 'message3'},
