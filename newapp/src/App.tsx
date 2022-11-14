@@ -3,7 +3,7 @@ import './App.css';
 import {FullInput} from "./Components/FullInput";
 
 
-function App () {
+function App() {
     let [message, setMessage] = useState([
             {message: 'message1'},
             {message: 'message2'},
@@ -12,7 +12,7 @@ function App () {
             {message: 'message5'}
         ]
     )
-    const addMessage =() => {
+    const addMessage = () => {
         console.log("afgvsfgbdghbd")
     }
     return (
@@ -30,4 +30,5 @@ function App () {
         </div>
     );
 }
+
 export default App;
