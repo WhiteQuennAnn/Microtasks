@@ -12,9 +12,8 @@ export const FullInput = (props: FullInputPropsType) => {
         setTitle(event.currentTarget.value)
     }
 
-
     const onClickButtonHandler = () => {
-
+props.addMessage(title)
     }
     return (
         <div>
