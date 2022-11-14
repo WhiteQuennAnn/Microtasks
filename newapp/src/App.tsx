@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 
 
-function App() {
+function App () {
     const [message, setMessage] = useState([
             {message: 'message1'},
             {message: 'message2'},
@@ -25,3 +25,4 @@ function App() {
         </div>
     );
 }
+export default App;
