@@ -10,10 +10,12 @@ export const FullInput = (props: FullInputPropsType) => {
 
     const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
         setTitle(event.currentTarget.value)
+        setTitle(" ")
     }
 
     const onClickButtonHandler = () => {
 props.addMessage(title)
+        setTitle(" ")
     }
     return (
         <div>
