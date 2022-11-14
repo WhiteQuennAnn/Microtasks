@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const FullInput = () => {
+export const FullInput = () => {
+    let [titke,setTitle] = useState()
     return (
         <div>
-            
+            <input/>
+            <button>+</button>
         </div>
     );
 };
 
-export default FullInput;
