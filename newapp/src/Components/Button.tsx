@@ -12,5 +12,5 @@ export const Button = (props: ButtonPropsType) => {
         <button onClick={onClickButtonHandler}> {props.name} </button>
     );
 }
-}
+
 
