@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
 import {FullInput} from "./Components/FullInput";
+import {Input} from "./Components/Input";
+import {Button} from "./Components/Button";
 
 
 function App() {
@@ -12,13 +14,16 @@ function App() {
             {message: 'message5'}
         ]
     )
-    const addMessage = (title:string) => {
-       let newMessage ={message: title}
+    const addMessage = (title: string) => {
+        let newMessage = {message: title}
         setMessage([newMessage, ...message])
     }
     return (
         <div className="App">
-            <FullInput addMessage={addMessage}/>
+            <Input/>
+            <Button/>
+
+            {/*<FullInput addMessage={addMessage}/>*/}
             {/*<div>*/}
             {/*    <input/>*/}
             {/*    <button>+</button>*/}
