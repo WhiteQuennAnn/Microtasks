@@ -24,6 +24,7 @@ function App() {
 
     const callBackButtonHandler = () => {
         addMessage(title)
+        setTitle("  ")
     }
 
     return (
