@@ -11,5 +11,7 @@ export const Button = (props: ButtonPropsType) => {
         props.callBack()
         return (
             <button onClick={onClickButtonHandler}> {props.name} </button>
-        );}}
+        );
+    }
+}
 
