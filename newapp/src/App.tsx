@@ -47,6 +47,7 @@ function App() {
         ]
     });
 
+
     function removeTask(todolistID: string, id: string) {
         // let filteredTasks = tasks.filter(t => t.id != id);
         // setTasks(filteredTasks);
@@ -58,61 +59,63 @@ function App() {
         // let newTasks = [task, ...tasks];
         // setTasks(newTasks);
         let newTask = {id: v1(), title: title, isDone: false};
-        setTasks( {...tasks, [todolistID]: [...tasks[todolistID], newTask]})
+        setTasks({...tasks, [todolistID]: [newTask, ...tasks[todolistID]]})
 
     }
 
-    function changeStatus(taskId: string, isDone: boolean) {
+    function changeStatus(todolistID: string, taskId: string, isDone: boolean) {
         // let task = tasks.find(t => t.id === taskId);
         // if (task) {
         //     task.isDone = isDone;
         // }
         //
         // setTasks([...tasks]);
-    }
 
-    // let tasksForTodolist = tasks;
+        setTasks({...tasks, [todolistID]: tasks[todolistID].map(t => t.id === taskId ? {...t, isDone: isDone} : t)})
 
-    function changeFilter(todolistID: string, value: FilterValuesType) {
+        // let tasksForTodolist = tasks;
 
-        setTodolists(todolists.map(
-            filtered => filtered.id === todolistID ? {...filtered, filter: value} : filtered))
-    }
+        function changeFilter(todolistID: string, value: FilterValuesType) {
 
-    // }
+            setTodolists(todolists.map(
+                filtered => filtered.id === todolistID ? {...filtered, filter: value} : filtered))
+        }
 
-    return (
 
-        <div className="App">
-            {todolists.map((mapTodolists) => {
-                    let tasksForTodolist = tasks[mapTodolists.id];
+        // }
 
-                    if (mapTodolists.filter === "active") {
-                        tasksForTodolist = tasks[mapTodolists.id].filter(t => t.isDone === false);
+        return (
+
+            <div className="App">
+                {todolists.map((mapTodolists) => {
+                        let tasksForTodolist = tasks[mapTodolists.id];
+
+                        if (mapTodolists.filter === "active") {
+                            tasksForTodolist = tasks[mapTodolists.id].filter(t => t.isDone === false);
+                        }
+                        if (mapTodolists.filter === "completed") {
+                            tasksForTodolist = tasks[mapTodolists.id].filter(t => t.isDone === true);
+                        }
+
+                        return (
+                            <Todolist
+                                key={mapTodolists.id}
+                                todolistID={mapTodolists.id}
+                                title={mapTodolists.title}
+                                tasks={tasksForTodolist}
+                                removeTask={removeTask}
+                                changeFilter={changeFilter}
+                                addTask={addTask}
+                                changeStatus={changeStatus}
+                                filter={mapTodolists.filter}
+                            />
+                        )
                     }
-                    if (mapTodolists.filter === "completed") {
-                        tasksForTodolist = tasks[mapTodolists.id].filter(t => t.isDone === true);
-                    }
-
-                    return (
-                        <Todolist
-                            key={mapTodolists.id}
-                            todolistID={mapTodolists.id}
-                            title={mapTodolists.title}
-                            tasks={tasksForTodolist}
-                            removeTask={removeTask}
-                            changeFilter={changeFilter}
-                            addTask={addTask}
-                            changeTaskStatus={changeStatus}
-                            filter={mapTodolists.filter}
-                        />
-                    )
+                )
                 }
-            )
-            }
 
-        </div>
-    );
+            </div>
+        );
+    }
 }
-
-export default App;
+    export default App;
