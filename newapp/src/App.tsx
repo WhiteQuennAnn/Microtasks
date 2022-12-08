@@ -69,34 +69,38 @@ function App() {
 
     // let tasksForTodolist = tasks;
 
-    function changeFilter(todolistID:string, value: FilterValuesType) {
-        setTodolists(todolistID);
+    function changeFilter(todolistID: string, value: FilterValuesType) {
+        console.log(todolistID)
+        setTodolists(todolists.map(
+            filtered => filtered.id === todolistID ? {...filtered, filter: value} : filtered))
+    }
+
     // }
 
     return (
 
         <div className="App">
             {todolists.map((mapTodolists) => {
-                let tasksForTodolist = tasks[mapTodolists.id];
+                    let tasksForTodolist = tasks[mapTodolists.id];
 
-                if (mapTodolists.filter === "active") {
-                    tasksForTodolist = tasks[mapTodolists.id].filter(t => t.isDone === false);
-                }
-                if (mapTodolists.filter === "completed") {
-                    tasksForTodolist = tasks[mapTodolists.id].filter(t => t.isDone === true);
-                }
+                    if (mapTodolists.filter === "active") {
+                        tasksForTodolist = tasks[mapTodolists.id].filter(t => t.isDone === false);
+                    }
+                    if (mapTodolists.filter === "completed") {
+                        tasksForTodolist = tasks[mapTodolists.id].filter(t => t.isDone === true);
+                    }
 
                     return (
                         <Todolist
                             key={mapTodolists.id}
                             todolistID={mapTodolists.id}
                             title={mapTodolists.title}
-                                  tasks={tasksForTodolist}
-                                  removeTask={removeTask}
-                                  changeFilter={changeFilter}
-                                  addTask={addTask}
-                                  changeTaskStatus={changeStatus}
-                                  filter={mapTodolists.filter}
+                            tasks={tasksForTodolist}
+                            removeTask={removeTask}
+                            changeFilter={changeFilter}
+                            addTask={addTask}
+                            changeTaskStatus={changeStatus}
+                            filter={mapTodolists.filter}
                         />
                     )
                 }
