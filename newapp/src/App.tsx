@@ -82,10 +82,25 @@ function App() {
         setFilter(value);
     }
 
-
     return (
+
         <div className="App">
-            <Todolist title="What to learn"
+            {todolists.map((mapTodolists) => {
+                    return (
+                        <Todolist title="What to learn"
+                                  tasks={tasksForTodolist}
+                                  removeTask={removeTask}
+                                  changeFilter={changeFilter}
+                                  addTask={addTask}
+                                  changeTaskStatus={changeStatus}
+                                  filter={filter}
+                        />
+                    )
+                }
+            )
+            }
+
+            <Todolist title={mapTodolists.title}
                       tasks={tasksForTodolist}
                       removeTask={removeTask}
                       changeFilter={changeFilter}
